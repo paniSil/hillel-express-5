@@ -1,0 +1,57 @@
+.light-theme-body {
+  background-color: #ffffff;
+  color: #212529;
+}
+
+.dark-theme-body {
+  background-color: #415c64;
+  color: #f8f9fa;
+}
+
+.light-theme-body .btn-primary.theme-btn {
+  background-color: #ca7fe7;
+  border-color: #ca7fe7;
+  color: #fff;
+}
+
+.light-theme-body .btn-primary.theme-btn:hover {
+  background-color: #d696f0;
+  border-color: #d696f0;
+}
+
+.dark-theme-body .btn-primary.theme-btn {
+  background-color: #24b199;
+  border-color: #24b199;
+  color: #fff;
+}
+
+.dark-theme-body .btn-primary.theme-btn:hover {
+  background-color: #1e9c87;
+  border-color: #24b199;
+}
+
+.light-theme-body .btn-outline-primary.theme-btn {
+  border-color: #ca7fe7;
+  color: #ca7fe7;
+}
+
+.light-theme-body .btn-outline-primary.theme-btn:hover {
+  background-color: #ca7fe7;
+  border-color: #ca7fe7;
+  color: #fff;
+}
+
+.dark-theme-body .btn-outline-primary.theme-btn {
+  border-color: #24b199;
+  color: #24b199;
+}
+
+.dark-theme-body .btn-outline-primary.theme-btn:hover {
+  background-color: #24b199;
+  border-color: #24b199;
+  color: #fff;
+}
+
+.dark-theme-body .theme-card {
+  background-color: #55737c;
+}

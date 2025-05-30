@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+  head
+    title User Profile: #{userProfile.name}
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles.css")
+    link(rel="icon", href="/favicon.png", type="image/png")
+
+  body(class=theme + '-theme-body')
+    .container(class=theme + '-theme-container')
+      h1.mt-4 User Profile #{userProfile.id} (PUG)
+
+      if userProfile
+        div 
+          strong Id: 
+          span=userProfile.id
+        div 
+          strong Name: 
+          span=userProfile.name
+        div 
+          strong Email: 
+          span=userProfile.email
+        div 
+          strong Age: 
+          span=userProfile.age
+      else 
+        div 
+          p User not found.
+
+      a.btn.btn-outline-primary.btn-sm.mt-4.theme-btn(href="/users") Back to User List
+      if userProfile
+        div.mr-3.mt-4 Current user: #{userProfile.email}
+          div
+            form(action="/auth/logout" method="POST" style="display:inline;")
+              button.btn.btn-primary.btn-sm.mt-2.theme-btn(type="submit") Logout
+
+
+
+    

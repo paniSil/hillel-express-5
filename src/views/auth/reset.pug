@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    title Reset Password
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles.css")
+    link(rel="icon", href="/favicon.png", type="image/png")
+  body
+    .container
+      h1.mt-4 Reset Password
+      form(method="POST", action=`/auth/reset/${token}`)
+        label(for="password") New password:
+        input(type="password", name="password", required)
+        button(type="submit") Set new password
+      div.mt-3
+        a(href="/auth/login") Login
+        |  |  
+        a(href="/auth/register") Register
+        |  |  
+        a(href="/") Main Page

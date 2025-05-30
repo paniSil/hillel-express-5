@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    title Express and Pug Example
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles.css")
+    link(rel="icon", href="/favicon.png", type="image/png")
+
+
+
+  body(class=theme + '-theme-body')
+    .container(class=theme + '-theme-container')
+      h1.mt-4 Welcome to Express and Pug Example
+      div
+        p= text
+      div.flex.row.pl-3
+        div
+          a.btn.btn-primary.mr-2.theme-btn(href=`users`) Users list
+        div
+          a.btn.btn-primary.mr-2.theme-btn(href=`articles`) Articles list 
+        div
+          a.btn.btn-outline-primary.mr-2.theme-btn(href=`/auth/register`) Register
+        div
+          a.btn.btn-outline-primary.mr-2.theme-btn(href=`/auth/login`) Login
+        div
+          a.btn.btn-outline-primary.theme-btn(href=`theme`) Choose theme

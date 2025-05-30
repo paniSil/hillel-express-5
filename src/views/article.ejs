@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    <%= article.title %>
+  </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.png" type="image/png">
+</head>
+
+<body class="<%= theme %>-theme-body">
+
+  <div class="container <%= theme %>-theme-container">
+    <% if (article) { %>
+      <h1 class="mt-4">
+        <%= article.title %>
+      </h1>
+      <div>
+        <%= article.text %>
+      </div>
+
+      <% } else { %>
+        <div>Article not found.</div>
+        <% } %>
+          <div>
+            <a class="btn btn-outline-primary btn-sm mt-4 theme-btn" href="/articles">Back to Articles</a>
+          </div>
+          <% if (user) { %>
+            <div class="mr-3 mt-4">
+              Current user: <strong>
+                <%= user.email %>
+              </strong>
+            </div>
+            <div>
+              <form action="/auth/logout" method="POST" style="display:inline;">
+                <button type="submit" class="btn btn-primary btn-sm mt-2 theme-btn">Logout</button>
+              </form>
+            </div>
+            <% } %>
+  </div>
+
+</body>
+
+</html>

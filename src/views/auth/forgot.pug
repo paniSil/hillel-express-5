@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    title Forgot Password
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles.css")
+    link(rel="icon", href="/favicon.png", type="image/png")
+  body(class=theme + '-theme-body')
+    .container(class=theme + '-theme-container')
+      h1.mt-4 Forgot Password
+      .row
+        .col-md-6.col-lg-4
+          form(method="POST", action="/auth/forgot")
+            label(for="email") Email:
+            input(type="email", name="email", required, class="form-control mb-2")
+            button(type="submit" class="btn btn-primary theme-btn") Reset password
+          if message
+            p.mt-3= message
+      div.mt-3
+        a.m-2(href="/auth/login") Login
+        a.m-2(href="/auth/register") Register
+        a.m-2(href="/") Main Page

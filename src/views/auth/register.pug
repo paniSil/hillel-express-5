@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+  head
+    title Registration
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles.css")
+    link(rel="icon", href="/favicon.png", type="image/png")
+
+
+
+  body(class=theme + '-theme-body')
+    .container(class=theme + '-theme-container')
+      h1.mt-4 Registration
+
+      div.container-sm
+        h5 Choose Theme
+        .row
+          .col-md-6.col-lg-4
+            form(action="/auth/register" method="POST")
+              .form-group
+                label(for="name") Username
+                input.form-control(type="text" id="name" name="name" required)
+              .form-group
+                label(for="email") Email:
+                input.form-control(type="email" id="email" name="email" required)
+              .form-group
+                label(for="password") Password:
+                input.form-control(type="password" id="password" name="password" required)
+              .form-group
+                label(for="password") Age:
+                input.form-control(type="age" id="age" name="age")
+              button.btn.btn-primary.theme-btn(type="submit") Register
+
+      div
+        p.mt-3
+          a.ml-2(href="/auth/login") Login
+      div
+        a.btn.btn-outline-primary.btn-sm.theme-btn(href=`/`) To Main Page
+
+      
+        

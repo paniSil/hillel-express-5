@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    title Login
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles.css")
+    link(rel="icon", href="/favicon.png", type="image/png")
+
+
+
+  body(class=theme + '-theme-body')
+    .container(class=theme + '-theme-container')
+      h1.mt-4 Login
+      div 
+        p Use test@example.com / password123 to login as test user
+      div
+        .row
+          .col-md-6.col-lg-4
+            form(action="/auth/login" method="POST")
+              .form-group
+                label(for="email") Email:
+                input.form-control(type="email" id="email" name="email" required)
+              .form-group
+                label(for="password") Password:
+                input.form-control(type="password" id="password" name="password" required)
+              button.btn.btn-primary.theme-btn(type="submit") Login
+      div.mt-2.mb-4
+        a.m-2(href="/auth/register") Register
+
+      div
+        a.btn.btn-outline-primary.btn-sm.theme-btn(href=`/`) To Main Page
+
+      

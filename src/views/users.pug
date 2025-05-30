@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+  head
+    title User list
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles.css")
+    link(rel="icon", href="/favicon.png", type="image/png")
+
+  body(class=theme + '-theme-body')
+    .container(class=theme + '-theme-container')
+      h1.mt-4 User list (PUG)
+      div
+        a.btn.btn-outline-primary.btn-sm.theme-btn(href=`/`) To Main Page
+
+      if users.length === 0
+        div
+          p No users yet
+      else
+        ul.p-2.flex.row
+          each user in users 
+            li.card.m-2.theme-card
+              div.card-body
+                div
+                  b Name: 
+                  span=user.name
+                div
+                  b Id: 
+                  span=user.id
+                div
+                  b Email: 
+                  span=user.email
+                div
+                  b Age: 
+                  span=user.age
+              div
+                a.btn.btn-primary.ml-4.theme-btn(href=`users/${user.id}`) Profile
+              br
+      if user
+        div.mr-3.mt-4 Current user: #{user.email}
+          div
+            form(action="/auth/logout" method="POST" style="display:inline;")
+              button.btn.btn-primary.btn-sm.mt-2.theme-btn(type="submit") Logout
+
+
+    

@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head
+    title Express and Pug Example
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles.css")
+    link(rel="icon", href="/favicon.png", type="image/png")
+
+
+
+  body(class=theme + '-theme-body')
+    .container(class=theme + '-theme-container')
+      h1.mt-4 Current Theme
+      div 
+        p Current theme: #[span=theme]
+
+      div.container-sm
+        h5 Choose Theme
+        .row
+          .col-md-6.col-lg-4
+            form(action="/theme" method="POST").mt-2
+              .form-group.d-flex.align-items-center
+                label.mr-2(for="theme-select")
+                select.form-control.mr-2#theme-select(name="theme" onchange="this.form.submit()")
+                  option(value="light", selected=theme === 'light') Light
+                  option(value="dark", selected=theme === 'dark') Dark
+    
+      div
+        a.btn.btn-outline-primary.btn-sm.theme-btn(href=`/`) To Main Page
+
+      
+        
