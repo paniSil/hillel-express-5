@@ -20,6 +20,7 @@ const __dirname = path.dirname(__filename)
 
 app.use(express.static('public'))
 app.set('views', './src/views')
+app.set('view engine', 'pug')
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())

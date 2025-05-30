@@ -9,12 +9,14 @@ const JWT_EXPIRES_IN = '1h';
 
 export async function register(req, res) {
     const { name, email, password, age } = req.body;
-    await createUser(name, email, password, age);
+    const theme = req.cookies.theme || 'light';
+    await createUser(name, email, password, age, theme);
     res.redirect('/auth/login');
 }
 
 export const login = async (req, res) => {
     const { email, password } = req.body;
+    const theme = req.cookies.theme || 'light';
     if (!email || !password) {
         return res.status(400).json({ message: 'Email and password are required.' });
     }
@@ -41,6 +43,7 @@ export const login = async (req, res) => {
         sameSite: 'Lax'
     });
 
+    //res.status(200).json({ message: 'Logged in successfully!', token });
     res.redirect('/')
 };
 
@@ -76,7 +79,7 @@ export async function postForgot(req, res) {
     user.resetToken = token;
     user.resetTokenExpiry = Date.now() + 3600000; // 1 година
 
-    // Створення тестового акаунта Ethereal
+    // Створення тестового акаунта Ethereal 
     const testAccount = await nodemailer.createTestAccount();
     const transporter = nodemailer.createTransport({
         host: 'smtp.ethereal.email',

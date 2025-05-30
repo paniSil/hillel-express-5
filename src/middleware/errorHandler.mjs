@@ -1,16 +1,9 @@
 import { isCelebrateError } from 'celebrate';
 
-//for tests
 export const notFoundHandler = (req, res, next) => {
     res.status(404).send('Not Found')
     next()
 }
-
-// export const notFoundHandler = (req, res, next) => {
-//     const error = new Error(`Not Found - ${req.originalUrl}`)
-//     error.status = 404
-//     next(error)
-// }
 
 export const errorHandler = (err, req, res, next) => {
     console.error(err.stack)

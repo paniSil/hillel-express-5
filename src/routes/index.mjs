@@ -4,17 +4,18 @@ import usersRouter from "./users.mjs";
 import articlesRouter from "./articles.mjs";
 import themeRouter from "./theme.mjs";
 import authRouter from "./auth.mjs";
-import { ensureAuthenticated } from "../middleware/authHandler.mjs";
+
+import { protect, authorize } from "../middleware/authHandler.mjs";
 
 
-const router = Router()
+const router = Router();
 
-router.use('/', rootRouter)
-router.use('/theme', themeRouter)
+router.use('/', rootRouter);
+router.use('/theme', themeRouter);
 router.use('/auth', authRouter);
 
-router.use('/users', ensureAuthenticated, usersRouter)
-router.use('/articles', ensureAuthenticated, articlesRouter)
+router.use('/users', protect, usersRouter);
+router.use('/articles', protect, authorize('admin'), articlesRouter);
 
 
-export default router
+export default router;

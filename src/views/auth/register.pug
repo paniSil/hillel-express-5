@@ -18,13 +18,13 @@ html(lang="en")
           .col-md-6.col-lg-4
             form(action="/auth/register" method="POST")
               .form-group
-                label(for="name") Username
+                label(for="name") Username*: 
                 input.form-control(type="text" id="name" name="name" required)
               .form-group
-                label(for="email") Email:
+                label(for="email") Email*: 
                 input.form-control(type="email" id="email" name="email" required)
               .form-group
-                label(for="password") Password:
+                label(for="password") Password*:
                 input.form-control(type="password" id="password" name="password" required)
               .form-group
                 label(for="password") Age:
